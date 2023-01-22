@@ -1,4 +1,5 @@
 import arrays.v1.StaticToDynamicArray
+import arrays.v1.StringsOperations
 
 fun main(args: Array<String>) {
 
@@ -19,6 +20,10 @@ fun main(args: Array<String>) {
     println(customArray.get())
     println(customArray.checkIfItemIsFound(1))
 
+
+    // B) String Operations
+    val stringsOperations = StringsOperations("My Name is Motaz")
+    println(stringsOperations.reverseString())
 
 
 }
