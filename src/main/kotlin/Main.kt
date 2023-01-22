@@ -17,6 +17,7 @@ fun main(args: Array<String>) {
     customArray.pop(1)
     customArray.pop(2)
     println(customArray.get())
+    println(customArray.checkIfItemIsFound(1))
 
 
 

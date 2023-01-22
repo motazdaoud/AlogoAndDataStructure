@@ -56,7 +56,7 @@ class StaticToDynamicArray() {
         length = data.size
     }
 
-    fun pop() {
+    fun pop() { // O(n) Time Complexity , // O(n) Memory Complexity
         val newArray = arrayOfNulls<Int>(length - 1)
         var index = 0
         while (index < length - 1) {
@@ -69,7 +69,7 @@ class StaticToDynamicArray() {
 
     }
 
-    fun pop(index: Int) {
+    fun pop(index: Int) { // O(n) Time Complexity , // O(n) Memory Complexity
         val newArray = arrayOfNulls<Int>(length - 1)
         var loopIndex = 0
         while (loopIndex < length - 1) {
@@ -85,20 +85,14 @@ class StaticToDynamicArray() {
         length = data.size
     }
 
-    private fun popItemFromArray(popIndex: Int?, item: Int) {
-//        val newArray = arrayOfNulls<Int>(length - 1)
-//        var index = 0
-//        while (index < length) {
-//            newArray[index] = data[index]
-//            index++
-//        }
-//
-//        if (popIndex == null) {
-//            newArray[newArray.size - 1] = item
-//        } else {
-//            newArray[popIndex] = item
-//
-//        }
+    fun checkIfItemIsFound(item: Int): Boolean { // O(n) Time Complexity , // O(1) Memory Complexity
+        data.forEach { dataItem ->
+            if (item == dataItem) {
+                return true
+            }
+        }
+
+        return false
     }
 
     private fun checkIndexNotAvailable(index: Int): Boolean {
