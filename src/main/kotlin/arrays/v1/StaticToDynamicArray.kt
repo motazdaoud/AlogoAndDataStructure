@@ -3,7 +3,7 @@ package arrays.v1
 class StaticToDynamicArray() {
 
     var length: Int = 0
-    var data: Array<Int?> = arrayOfNulls<Int>(length)
+    var data: Array<Int?> = arrayOfNulls(length)
 
     fun get(index: Int): Int? { // O(1) Time Complexity, O(1) Memory Complexity
         if (checkIndexNotAvailable(index)) {
@@ -53,9 +53,53 @@ class StaticToDynamicArray() {
         }
 
         data = newArray
-        length++
+        length = data.size
     }
 
+    fun pop() {
+        val newArray = arrayOfNulls<Int>(length - 1)
+        var index = 0
+        while (index < length - 1) {
+            newArray[index] = data[index]
+            index++
+        }
+
+        data = newArray
+        length = data.size
+
+    }
+
+    fun pop(index: Int) {
+        val newArray = arrayOfNulls<Int>(length - 1)
+        var loopIndex = 0
+        while (loopIndex < length - 1) {
+            if (loopIndex == index) {
+                loopIndex++
+                continue
+            }
+            newArray[loopIndex] = data[loopIndex]
+            loopIndex++
+        }
+
+        data = newArray
+        length = data.size
+    }
+
+    private fun popItemFromArray(popIndex: Int?, item: Int) {
+//        val newArray = arrayOfNulls<Int>(length - 1)
+//        var index = 0
+//        while (index < length) {
+//            newArray[index] = data[index]
+//            index++
+//        }
+//
+//        if (popIndex == null) {
+//            newArray[newArray.size - 1] = item
+//        } else {
+//            newArray[popIndex] = item
+//
+//        }
+    }
 
     private fun checkIndexNotAvailable(index: Int): Boolean {
         return index >= length

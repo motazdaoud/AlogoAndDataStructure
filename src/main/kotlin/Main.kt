@@ -10,7 +10,14 @@ fun main(args: Array<String>) {
     customArray.push(1)
     customArray.push(2)
     customArray.push(3)
-    customArray.push(3, 4)
+    customArray.push(4)
     println(customArray.get())
-    println(customArray.getWithIndex(3))
+    customArray.pop()
+    println(customArray.get())
+    customArray.pop(1)
+    customArray.pop(2)
+    println(customArray.get())
+
+
+
 }
